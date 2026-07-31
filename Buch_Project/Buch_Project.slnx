@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Solution Items/" />
+  <Project Path="X:/с#/Buch_Project/Buch_Project.csproj">
+    <Deploy Solution="Debug|*" />
+  </Project>
+</Solution>

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Buch_Project.MainPage"
+             Padding="20"
+             >
+
+    <Grid RowDefinitions="*, Auto">
+
+        <!-- Верхній блок: кнопки в один рядок -->
+        <Grid Grid.Row="0" ColumnDefinitions="*, *" ColumnSpacing="15" VerticalOptions="Start">
+
+            <!-- Кнопка Register -->
+            <Button Grid.Column="0"
+                    x:Name="RegisterButton"
+                    Text="Register"
+                    BorderColor="Black"
+                    FontSize="24"
+                    BackgroundColor="LightBlue"
+                    BorderWidth="2"
+                    Clicked="RegisterButton_Clicked"
+                    HorizontalOptions="Fill">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="LightBlue" />
+                                    <Setter Property="TextColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <!-- Стан підсвічування при наведенні -->
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#E2E8F0" />
+                                    <Setter Property="TextColor" Value="#0F172A" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+            <!-- Кнопка Login -->
+            <Button Grid.Column="1"
+                    x:Name="LoginButton"
+                    Text="Login"
+                    BorderColor="Black"
+                    BackgroundColor="LightBlue"
+                    FontSize="24"
+                    BorderWidth="2"
+                    Clicked="LoginButton_Clicked"
+                    HorizontalOptions="Fill">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="LightBlue" />
+                                    <Setter Property="TextColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <!-- Стан підсвічування при наведенні -->
+                            <VisualState x:Name="PointerOver">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#E2E8F0" />
+                                    <Setter Property="TextColor" Value="#0F172A" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+        </Grid>
+
+        <!-- Нижній блок: кнопка Exit -->
+        <Button Grid.Row="1"
+                x:Name="ExitButton"
+                Text="Exit"
+                FontSize="24"
+                TextTransform="Uppercase"
+                BorderColor="Black"
+                BorderWidth="2"
+                Clicked="ExitButton_Clicked"
+                HorizontalOptions="Fill"
+                VerticalOptions="End">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="DarkGray" />
+                                <Setter Property="TextColor" Value="Red" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <!-- Стан підсвічування при наведенні -->
+                        <VisualState x:Name="PointerOver">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" Value="#DC2626" />
+                                <!-- Яскраво-червоний фон -->
+                                <Setter Property="TextColor" Value="White" />
+                                <!-- Білий текст -->
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+
+    </Grid>
+
+</ContentPage>
