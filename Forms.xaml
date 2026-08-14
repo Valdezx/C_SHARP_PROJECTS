@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="taekwondo_app.Forms"
+             NavigationPage.HasNavigationBar="False"
+             Shell.NavBarIsVisible="False"
+             BackgroundColor="Black"
+             Title="Forms">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!-- Стиль для синіх кнопок віднімання -->
+            <Style x:Key="BlueDeductButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#1E88E5" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HeightRequest" Value="42" />
+            </Style>
+
+            <!-- Стиль для червоних кнопок віднімання -->
+            <Style x:Key="RedDeductButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#E53935" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="CornerRadius" Value="8" />
+                <Setter Property="HeightRequest" Value="42" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto, *, Auto" Padding="12" RowSpacing="10">
+
+        <!-- ВЕРХНЯ ПАНЕЛЬ: АВТОМАТИЧНО КАЛЬКУЛЬОВАНА ЗАГАЛЬНА СУМА (МАКС 34) -->
+        <Grid Grid.Row="0" ColumnDefinitions="*, *" ColumnSpacing="12">
+            <!-- Синій кут -->
+            <Border Grid.Column="0" BackgroundColor="#1E1E1E" Stroke="#1E88E5" StrokeThickness="2" StrokeShape="RoundRectangle 10" Padding="10">
+                <VerticalStackLayout Spacing="2">
+                    <Label Text="СИНІЙ" TextColor="#1E88E5" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label x:Name="BlueTotalLabel" Text="34" TextColor="#1E88E5" FontSize="42" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Червоний кут -->
+            <Border Grid.Column="1" BackgroundColor="#1E1E1E" Stroke="#E53935" StrokeThickness="2" StrokeShape="RoundRectangle 10" Padding="10">
+                <VerticalStackLayout Spacing="2">
+                    <Label Text="ЧЕРВОНИЙ" TextColor="#E53935" FontSize="15" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <Label x:Name="RedTotalLabel" Text="34" TextColor="#E53935" FontSize="42" FontAttributes="Bold" HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+
+        <!-- ОСНОВНИЙ БЛОК: КНОПКИ З ВКАЗАНИМИ БАЛАМИ В ДВІ КОЛОНКИ -->
+        <ScrollView Grid.Row="1">
+            <Grid ColumnDefinitions="*, *" ColumnSpacing="12">
+
+                <!-- ЛІВА КОЛОНКА (СИНІЙ) -->
+                <VerticalStackLayout Grid.Column="0" Spacing="8">
+                    <Button x:Name="BlueTechBtn" Text="Технічний зміст: 10 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BlueTech_Clicked" />
+                    <Button x:Name="BlueRhythmBtn" Text="Ритм: 6 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BlueRhythm_Clicked" />
+                    <Button x:Name="BlueBalanceBtn" Text="Баланс: 6 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BlueBalance_Clicked" />
+                    <Button x:Name="BlueBreathBtn" Text="Контроль дихання: 6 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BlueBreath_Clicked" />
+                    <Button x:Name="BluePowerBtn" Text="Потужність: 6 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BluePower_Clicked" />
+                </VerticalStackLayout>
+
+                <!-- ПРАВА КОЛОНКА (ЧЕРВОНИЙ) -->
+                <VerticalStackLayout Grid.Column="1" Spacing="8">
+                    <Button x:Name="RedTechBtn" Text="Технічний зміст: 10 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedTech_Clicked" />
+                    <Button x:Name="RedRhythmBtn" Text="Ритм: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedRhythm_Clicked" />
+                    <Button x:Name="RedBalanceBtn" Text="Баланс: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedBalance_Clicked" />
+                    <Button x:Name="RedBreathBtn" Text="Контроль дихання: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedBreath_Clicked" />
+                    <Button x:Name="RedPowerBtn" Text="Потужність: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedPower_Clicked" />
+                </VerticalStackLayout>
+
+            </Grid>
+        </ScrollView>
+
+        <!-- НИЖНЯ ПАНЕЛЬ КЕРУВАННЯ -->
+        <VerticalStackLayout Grid.Row="2" Spacing="6">
+            <!-- Кнопка визначення переможця -->
+            <Button Text="🏆 Оголосити переможця" 
+                    BackgroundColor="#388E3C" 
+                    TextColor="White" 
+                    FontSize="15" 
+                    FontAttributes="Bold" 
+                    CornerRadius="8" 
+                    HeightRequest="40" 
+                    Clicked="OnDetermineWinnerClicked" />
+
+            <!-- Кнопки скидання та повернення -->
+            <Grid ColumnDefinitions="*, *" ColumnSpacing="8">
+                <Button Grid.Column="0"
+                        Text="← На головну" 
+                        BackgroundColor="#1E1E1E" 
+                        TextColor="White" 
+                        FontSize="13" 
+                        CornerRadius="8"
+                        HeightRequest="38"
+                        Clicked="OnBackToMainClicked" />
+
+                <Button Grid.Column="1"
+                        Text="Скинути (34)" 
+                        BackgroundColor="#2E2E2E" 
+                        TextColor="#E53935" 
+                        FontSize="13" 
+                        FontAttributes="Bold"
+                        CornerRadius="8"
+                        HeightRequest="38"
+                        Clicked="OnResetClicked" />
+            </Grid>
+        </VerticalStackLayout>
+
+    </Grid>
+
+</ContentPage>
