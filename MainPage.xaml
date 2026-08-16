@@ -16,18 +16,21 @@
         <StackLayout Grid.Row="2" Padding="20">
             
             <Button x:Name="ViewFormsButton"
-                    BackgroundColor="LightGray"
-                    BorderColor="Gray"
+                    BackgroundColor="Black"
+                    BorderColor="Orange"
                     BorderWidth="2"
+                    HeightRequest="60"
                     Text="Туль"
+                    TextColor="Orange"
                     Clicked="ViewFormsButton_Clicked"
                     Margin="0,10" />
             <Button x:Name="ViewSparringButton"
-                    BackgroundColor="LightGray"
-                    BorderColor="Gray"
+                    BackgroundColor="Black"
+                    BorderColor="Orange"
+                    HeightRequest="60"
                     BorderWidth="2"
                     Text="Спаринг"
-                    TextColor="White"
+                    TextColor="Orange"
                     Clicked="ViewSparringButton_Clicked"
                     Margin="0,10" />
         </StackLayout>

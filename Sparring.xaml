@@ -140,7 +140,7 @@
                     CornerRadius="8"
                     HeightRequest="42"
                     Clicked="OnResetClicked" />
-
+        
         </Grid>
 
     </Grid>

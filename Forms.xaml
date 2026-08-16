@@ -62,6 +62,7 @@
                     <Button x:Name="BlueBalanceBtn" Text="Баланс: 6 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BlueBalance_Clicked" />
                     <Button x:Name="BlueBreathBtn" Text="Контроль дихання: 6 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BlueBreath_Clicked" />
                     <Button x:Name="BluePowerBtn" Text="Потужність: 6 (-1)" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BluePower_Clicked" />
+                    <Button x:Name="BlueZeroBtn" Text="Нуль балів" Style="{StaticResource BlueDeductButtonStyle}" Clicked="BlueZeroBtn_Clicked" />
                 </VerticalStackLayout>
 
                 <!-- ПРАВА КОЛОНКА (ЧЕРВОНИЙ) -->
@@ -70,7 +71,9 @@
                     <Button x:Name="RedRhythmBtn" Text="Ритм: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedRhythm_Clicked" />
                     <Button x:Name="RedBalanceBtn" Text="Баланс: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedBalance_Clicked" />
                     <Button x:Name="RedBreathBtn" Text="Контроль дихання: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedBreath_Clicked" />
+                   
                     <Button x:Name="RedPowerBtn" Text="Потужність: 6 (-1)" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedPower_Clicked" />
+                    <Button x:Name="RedZeroBtn" Text="Нуль балів" Style="{StaticResource RedDeductButtonStyle}" Clicked="RedZeroBtn_Clicked"     />
                 </VerticalStackLayout>
 
             </Grid>

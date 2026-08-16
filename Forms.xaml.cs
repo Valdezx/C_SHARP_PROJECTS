@@ -104,4 +104,27 @@ public partial class Forms : ContentPage
     }
 
     #endregion
+
+    private void RedZeroBtn_Clicked(object sender, EventArgs e)
+    {
+        _redBalance = 0;
+        _redBreath = 0;
+        _redPower = 0;
+        _redRhythm = 0;
+        _redTech = 0;
+        { RedTotalLabel.Text = "0"; }
+    }
+
+    private void BlueZeroBtn_Clicked(object sender, EventArgs e)
+    {
+        _blueBalance = 0;
+        _blueBreath = 0;
+        _bluePower = 0;
+        _blueRhythm = 0;
+        _blueTech = 0;
+        { BlueTotalLabel.Text = "0"; }
+    }
+
+
+    
 }
