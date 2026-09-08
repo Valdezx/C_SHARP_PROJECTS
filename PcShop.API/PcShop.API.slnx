@@ -1,0 +1,28 @@
+<Solution>
+  <Folder Name="/controllers/">
+    <File Path="AuthController.cs" />
+    <File Path="CategoriesController.cs" />
+    <File Path="DbController.cs" />
+    <File Path="OrdersController.cs" />
+    <File Path="ProductsController.cs" />
+  </Folder>
+  <Folder Name="/data/">
+    <File Path="DbContext.cs" />
+    <File Path="DbInitialiser.cs" />
+  </Folder>
+  <Folder Name="/DTOs/">
+    <File Path="AuthDTO.cs" />
+    <File Path="CategoryDTO.cs" />
+    <File Path="OrderDTO.cs" />
+    <File Path="ProductsDTO.cs" />
+  </Folder>
+  <Folder Name="/models/">
+    <File Path="AppUser.cs" />
+    <File Path="category.cs" />
+    <File Path="Order.cs" />
+    <File Path="OrderItem.cs" />
+    <File Path="Products.cs" />
+  </Folder>
+  <Project Path="../PcShop.WEB/PcShop.WEB.csproj" Id="35fa0ec2-6416-42e6-9be1-5d07e1cbe6a9" />
+  <Project Path="PcShop.API.csproj" />
+</Solution>
